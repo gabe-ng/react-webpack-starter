@@ -5,6 +5,9 @@ module.exports = (env, options) => {
     // Javascript entry file
     return { 
         entry: './src/index.js',
+        devServer: {
+            port: 3000,
+        },
         // Where our compiled code will go
         output: {
             path: path.join(__dirname, '/dist'),
