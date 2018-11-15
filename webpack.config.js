@@ -7,11 +7,14 @@ module.exports = (env, options) => {
         entry: './src/index.js',
         devServer: {
             port: 3000,
+            // Allow for refreshes
+            historyApiFallback: true,
         },
         // Where our compiled code will go
         output: {
             path: path.join(__dirname, '/dist'),
             filename: 'index_bundle.js',
+            publicPath: "/",
         },
         module: {
             rules: [
@@ -21,6 +24,10 @@ module.exports = (env, options) => {
                     use: {
                         loader: 'babel-loader',
                     }
+                },
+                {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],   
                 }
             ]
         },
