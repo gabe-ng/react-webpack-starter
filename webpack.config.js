@@ -27,6 +27,7 @@ module.exports = (env, options) => {
                 },
                 {
                     test: /\.css$/,
+                    // Puts styles in the <head></head> - Use different set up for stylesheet
                     use: ['style-loader', 'css-loader'],   
                 }
             ]
